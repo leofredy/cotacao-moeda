@@ -1,6 +1,8 @@
 import React from "react";
 
-import { HomeWrapper } from "./style";
+import Select from "../../components/Gerais";
+
+import { HomeWrapper, ContainerMoedaOrigem } from "./style";
 
 export default function Home() {
   return(
@@ -14,6 +16,10 @@ export default function Home() {
             <h3>
               Selecione a moeda e o valor de origem:
             </h3>
+            <ContainerMoedaOrigem>
+              <Select/>
+              <input type="text" />
+            </ContainerMoedaOrigem>
             <h3>
               Selecione as moedas de destino:
             </h3>

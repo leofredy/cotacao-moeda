@@ -43,3 +43,17 @@ export const HomeWrapper = styled.div`
     }
   }
 `;
+
+export const ContainerMoedaOrigem = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 180px;
+  margin-bottom: 32px;
+
+  input {
+    width: 70px;
+    border: 1px solid #CCC;
+    border-radius: 8px;
+  }
+`;

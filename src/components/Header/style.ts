@@ -40,6 +40,7 @@ export const Navigation = styled.nav<propsNavigation>`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2;
   bottom: 0;
   display: ${props => props.showNavigation ? "block" : "none"};
   width: 100%;

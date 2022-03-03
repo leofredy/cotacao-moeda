@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { 
   HeaderStyle, 
@@ -19,15 +19,20 @@ export default function Header() {
         document.body.style.overflowY = !prevState ? "hidden" : "auto";
         return !prevState;
       });
-      
     }
   }
 
-  (function getCurrentDate() {
+  function getCurrentDate() {
     setTimeout(() => {
       setCurrentDate(new Date().toLocaleString("pt-BR"));
     }, 1000);
-  })();
+  }
+
+  useEffect(() => {
+    getCurrentDate();
+  }, [currentDate]);
+
+  
 
   return (
     <HeaderStyle>
