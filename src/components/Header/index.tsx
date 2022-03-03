@@ -14,7 +14,12 @@ export default function Header() {
 
   function toggleMenu(event: MouseEvent, self: boolean) {
     if (!self || event.target === event.currentTarget) {
-      setShowMenu((prevState) => !prevState);
+      setShowMenu((prevState) => {
+        console.log(!prevState);
+        document.body.style.overflowY = !prevState ? "hidden" : "auto";
+        return !prevState;
+      });
+      
     }
   }
 
@@ -40,7 +45,11 @@ export default function Header() {
                 Cotação de moedas
               </p>
             </div>
-            <Navigation onClick={(event) => toggleMenu(event as unknown as MouseEvent, true)} showNavigation={showMenu}>
+
+            <Navigation 
+              onClick={(event) => toggleMenu(event as unknown as MouseEvent, true)} 
+              showNavigation={showMenu}
+            >
               <NavigationLinks>
                 <li className="logoMobile">
                   <a href="">

@@ -9,6 +9,7 @@ export const FooterStyle = styled.footer`
     margin-bottom: 4px;
   }
   a {
+    display: inline;
     text-decoration: underline;
   }
 `;

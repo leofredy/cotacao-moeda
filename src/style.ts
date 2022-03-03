@@ -15,6 +15,7 @@ export default createGlobalStyle`
     padding: 0 10px;
   }
   a {
+    display: block;
     text-decoration: none;
     color: #343a40;
   }
@@ -33,6 +34,7 @@ export default createGlobalStyle`
   }
   h3 {
     font-size: 16px;
+    color: #858585;
   }
   p {
     font-size: 12px;
@@ -42,6 +44,10 @@ export default createGlobalStyle`
     background-color: transparent;
     outline: none;
     border: none;
+  }
+  label {
+    font-size: 14px;
+    color: #343a40;
   }
   @media (min-width: 1024px) {
     .column {

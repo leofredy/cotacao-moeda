@@ -81,7 +81,7 @@ export const NavigationLinks = styled.ul`
     border-bottom: 1px solid #949393;
     font-weight: 700;
   }
-  li:not(.logoMobile, .closeMenuMobile) {
+  li:not(.logoMobile, .closeMenuMobile) a {
     padding: 16px 16px;
   }
   li:not(.logoMobile):hover {
