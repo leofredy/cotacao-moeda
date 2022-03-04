@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Paragraph } from "./style";
+import { Container, Paragraph } from "./style";
 
 interface PropsType {
   codesData: any,
@@ -10,7 +10,7 @@ interface PropsType {
 
 export default function Cotacao({ codesData, codein, quantity }: PropsType) {
   return(
-    <div>
+    <Container>
       <Paragraph>
         <span>{codein}</span> {quantity}
       </Paragraph>
@@ -25,6 +25,6 @@ export default function Cotacao({ codesData, codein, quantity }: PropsType) {
           );
         })
       }
-    </div>
+    </Container>
   );
 }

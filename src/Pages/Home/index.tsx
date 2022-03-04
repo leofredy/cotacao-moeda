@@ -88,6 +88,13 @@ export default function Home() {
       });
   }
 
+  function handleNovaCotacao() {
+    setShowResult(false);
+    setCodein("");
+    setCodesout([]);
+    setQuantity("");
+  }
+
   return(
     <main>
       <div className="row">
@@ -149,25 +156,6 @@ export default function Home() {
                       </div>
                     )}
                   </Transition>
-
-                  <Transition 
-                    nodeRef={btnCotacaoRef}
-                    in={showBtnCotacao} 
-                    timeout={300}
-                  >
-                    {state => (
-                      <button
-                        onClick={fetchCotacao}
-                        ref={codeoutRef}
-                        style={{
-                          ...defaultFade(300),
-                          ...transitionFade[state],
-                        }}
-                      >
-                        Obter cotação
-                      </button>
-                    )}
-                  </Transition>
                 </>
               ) : (
                 <Cotacao 
@@ -177,6 +165,26 @@ export default function Home() {
                 />
               )
             }
+            <Transition 
+              nodeRef={btnCotacaoRef}
+              in={showBtnCotacao} 
+              timeout={300}
+            >
+              {state => (
+                <button
+                  onClick={() => {
+                    return showResult ? handleNovaCotacao() : fetchCotacao()
+                  }}
+                  ref={codeoutRef}
+                  style={{
+                    ...defaultFade(300),
+                    ...transitionFade[state],
+                  }}
+                >
+                  {showResult ? "Nova cotação" : "Obter cotação"}
+                </button>
+              )}
+            </Transition>
             
           </HomeWrapper>
         </div>
