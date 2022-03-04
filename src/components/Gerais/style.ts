@@ -6,6 +6,7 @@ interface PropsType {
 
 export const Container = styled.div<PropsType>`
   position: relative;
+  z-index: 1;
   cursor: pointer;
   div {
     display: flex;
@@ -15,6 +16,7 @@ export const Container = styled.div<PropsType>`
     min-width: 80px;
     border: 1px solid #CCC;
     border-radius: 8px;
+    background: #FFF;
   }
   div p {
     margin-right: 8px;
@@ -27,7 +29,7 @@ export const Container = styled.div<PropsType>`
   ul {
     position: absolute;
     top: calc(100% + 4px);
-    z-index: 1;
+    z-index: -1;
     min-width: 100%;
     background-color: #FFF;
     border: 1px solid #CCC;

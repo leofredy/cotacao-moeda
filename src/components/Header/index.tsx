@@ -8,6 +8,8 @@ import {
   CurrentDate  
 } from "./style";
 
+let timer: NodeJS.Timeout;
+
 export default function Header() {
   const [currentDate, setCurrentDate] = useState(new Date().toLocaleString("pt-BR"));
   const [showMenu, setShowMenu] = useState(false);
@@ -15,24 +17,24 @@ export default function Header() {
   function toggleMenu(event: MouseEvent, self: boolean) {
     if (!self || event.target === event.currentTarget) {
       setShowMenu((prevState) => {
-        console.log(!prevState);
         document.body.style.overflowY = !prevState ? "hidden" : "auto";
         return !prevState;
       });
     }
   }
 
-  function getCurrentDate() {
-    setTimeout(() => {
+  (function getCurrentDate() {
+    timer = setTimeout(() => {
       setCurrentDate(new Date().toLocaleString("pt-BR"));
     }, 1000);
-  }
+  })();
 
   useEffect(() => {
-    getCurrentDate();
-  }, [currentDate]);
-
-  
+    
+    return function clearn() {
+      clearTimeout(timer)
+    }
+  });
 
   return (
     <HeaderStyle>
@@ -57,12 +59,12 @@ export default function Header() {
             >
               <NavigationLinks>
                 <li className="logoMobile">
-                  <a href="">
+                  <a href="#">
                     Cotação de moedas
                   </a>
                 </li>
                 <li>
-                  <a href="">
+                  <a href="#">
                     Home
                   </a>
                 </li>

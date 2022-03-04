@@ -14,9 +14,11 @@ export const HomeWrapper = styled.div`
   h3 {
     margin-bottom: 16px;
     font-weight: 400;
+    text-align: center;
   }
   .radioButton {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-bottom: 24px;
   }
@@ -55,5 +57,7 @@ export const ContainerMoedaOrigem = styled.div`
     width: 70px;
     border: 1px solid #CCC;
     border-radius: 8px;
+    padding: 8px;
+    font-size: 16px;
   }
 `;
